@@ -8,8 +8,9 @@ export interface SoundInformerConfig {
   /** 
    * Public Mapbox токен с URL restrictions
    * ВАЖНО: В настройках Mapbox укажите домены, где разрешено использование
+   * По умолчанию используется захардкоженный токен
    */
-  mapboxToken: string;
+  mapboxToken?: string;
   
   /** Начальный центр карты [longitude, latitude] (по умолчанию Париж) */
   center?: [number, number];
@@ -120,6 +121,11 @@ export const DEFAULT_CENTER: [number, number] = [2.3522, 48.8566];
  * Уровень zoom по умолчанию
  */
 export const DEFAULT_ZOOM = 12;
+
+/**
+ * Mapbox токен по умолчанию (привязан к домену через URL restrictions)
+ */
+export const DEFAULT_MAPBOX_TOKEN = 'pk.eyJ1IjoibmFtbGkiLCJhIjoiY21raXB4MDdjMHNmbzNmc2NnYzB0Y2o5aCJ9.Vb6Uv2Jl0VpUT2_sc8c_uA';
 
 /**
  * Определение локали по умолчанию

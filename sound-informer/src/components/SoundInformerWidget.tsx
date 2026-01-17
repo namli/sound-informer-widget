@@ -1,7 +1,7 @@
 import { mockSensors } from '@/data/mockSensors';
 import type { Locale } from '@/lib/i18n';
 import type { Sensor, SoundInformerConfig } from '@/types';
-import { DEFAULT_CENTER, DEFAULT_ZOOM, getDefaultLocale } from '@/types';
+import { DEFAULT_CENTER, DEFAULT_ZOOM, DEFAULT_MAPBOX_TOKEN, getDefaultLocale } from '@/types';
 import { useState } from 'react';
 import { MapView } from './MapView';
 import { SensorList } from './SensorList';
@@ -15,6 +15,7 @@ export function SoundInformerWidget({ config }: SoundInformerWidgetProps) {
   
   const center = config.center || DEFAULT_CENTER;
   const zoom = config.zoom || DEFAULT_ZOOM;
+  const mapboxToken = config.mapboxToken || DEFAULT_MAPBOX_TOKEN;
   const locale = (config.locale || getDefaultLocale()) as Locale;
 
   const [viewState, setViewState] = useState({
@@ -50,7 +51,7 @@ export function SoundInformerWidget({ config }: SoundInformerWidgetProps) {
       />
       <div className="si-flex-grow si-relative">
         <MapView
-          mapboxToken={config.mapboxToken}
+          mapboxToken={mapboxToken}
           viewState={viewState}
           onViewStateChange={setViewState}
           sensors={mockSensors}

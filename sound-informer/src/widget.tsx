@@ -27,9 +27,6 @@ const SoundInformer: SoundInformerAPI = {
     if (!config.container) {
       throw new Error('SoundInformer: container is required');
     }
-    if (!config.mapboxToken) {
-      throw new Error('SoundInformer: mapboxToken is required');
-    }
 
     // Поиск контейнера
     const container = document.querySelector(config.container) as HTMLElement;
