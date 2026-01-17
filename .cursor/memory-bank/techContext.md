@@ -6,7 +6,7 @@
 - **React** 19.x — UI фреймворк
 - **TypeScript** 5.x — типизация
 - **Vite** 7.x — сборка (library mode)
-- **Tailwind CSS** 4.x — стилизация
+- **Tailwind CSS** 3.x — стилизация
 - **shadcn/ui** latest — UI компоненты
 
 ### Библиотеки для карт и графиков
@@ -116,7 +116,7 @@ sound-informer/
   "@vitejs/plugin-react": "^latest",
   "typescript": "^5.x",
   "vite": "^7.x",
-  "tailwindcss": "^4.x",
+  "tailwindcss": "^3.x",
   "autoprefixer": "^latest",
   "postcss": "^latest"
 }
@@ -153,7 +153,7 @@ export default defineConfig({
 ### Tailwind Configuration
 - Префикс `si-` для всех классов виджета
 - CSS Variables для темизации (если потребуется)
-- Поддержка Tailwind CSS 4.x
+- Поддержка Tailwind CSS 3.x
 
 ### TypeScript Configuration
 - Строгая типизация
