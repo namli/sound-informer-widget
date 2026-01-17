@@ -9,8 +9,12 @@ import { SensorMarker } from './SensorMarker';
 
 interface MapViewProps {
   mapboxToken: string;
-  center: [number, number];
-  zoom: number;
+  viewState: {
+    longitude: number;
+    latitude: number;
+    zoom: number;
+  };
+  onViewStateChange: (viewState: any) => void;
   sensors: Sensor[];
   selectedSensor: Sensor | null;
   locale: Locale;
@@ -20,8 +24,8 @@ interface MapViewProps {
 
 export function MapView({
   mapboxToken,
-  center,
-  zoom,
+  viewState,
+  onViewStateChange,
   sensors,
   selectedSensor,
   locale,
@@ -42,11 +46,8 @@ export function MapView({
   return (
     <Map
       mapboxAccessToken={mapboxToken}
-      initialViewState={{
-        longitude: center[0],
-        latitude: center[1],
-        zoom: zoom,
-      }}
+      {...viewState}
+      onMove={(evt) => onViewStateChange(evt.viewState)}
       style={{ width: '100%', height: '100%' }}
       mapStyle="mapbox://styles/mapbox/streets-v12"
     >

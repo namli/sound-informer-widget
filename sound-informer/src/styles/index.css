@@ -6,8 +6,27 @@
 .si-widget-container {
   width: 100%;
   height: 100%;
-  @apply si-p-4;
+  display: flex;
+    overflow: hidden;
+  }
+  
+  /* Custom scrollbar for sensor list */
+  .si-sensor-list .si-overflow-y-auto::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .si-sensor-list .si-overflow-y-auto::-webkit-scrollbar-track {
+    @apply si-bg-transparent;
+  }
+  
+  .si-sensor-list .si-overflow-y-auto::-webkit-scrollbar-thumb {
+    @apply si-bg-gray-200 si-rounded-full;
+  }
+  
+  .si-sensor-list .si-overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    @apply si-bg-gray-300;
 }
+
 
 .si-map-container {
   width: 100%;

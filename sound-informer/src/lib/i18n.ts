@@ -7,6 +7,7 @@ export type Locale = 'en' | 'fr' | 'es' | 'ru';
 export interface Translations {
   sensor: string;
   noiseLevel: string;
+  sensorList: string;
   close: string;
   low: string;
   moderate: string;
@@ -19,6 +20,7 @@ const translations: Record<Locale, Translations> = {
   en: {
     sensor: 'Sensor',
     noiseLevel: 'Noise Level',
+    sensorList: 'Sensors',
     close: 'Close',
     low: 'Low',
     moderate: 'Moderate',
@@ -29,6 +31,7 @@ const translations: Record<Locale, Translations> = {
   fr: {
     sensor: 'Capteur',
     noiseLevel: 'Niveau de bruit',
+    sensorList: 'Capteurs',
     close: 'Fermer',
     low: 'Faible',
     moderate: 'Modéré',
@@ -39,6 +42,7 @@ const translations: Record<Locale, Translations> = {
   es: {
     sensor: 'Sensor',
     noiseLevel: 'Nivel de ruido',
+    sensorList: 'Sensores',
     close: 'Cerrar',
     low: 'Bajo',
     moderate: 'Moderado',
@@ -49,6 +53,7 @@ const translations: Record<Locale, Translations> = {
   ru: {
     sensor: 'Датчик',
     noiseLevel: 'Уровень шума',
+    sensorList: 'Датчики',
     close: 'Закрыть',
     low: 'Низкий',
     moderate: 'Умеренный',
