@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import Map, { Marker, Popup } from 'react-map-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import { SensorMarker } from './SensorMarker';
-import { NoisePopup } from './NoisePopup';
-import type { Sensor, NoiseReading } from '@/types';
 import { generateMockReadings } from '@/data/mockSensors';
 import type { Locale } from '@/lib/i18n';
+import type { Sensor } from '@/types';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { useMemo } from 'react';
+import Map, { Marker, Popup } from 'react-map-gl';
+import { NoisePopup } from './NoisePopup';
+import { SensorMarker } from './SensorMarker';
 
 interface MapViewProps {
   mapboxToken: string;
@@ -28,15 +28,11 @@ export function MapView({
   onMarkerClick,
   onClosePopup,
 }: MapViewProps) {
-  const [readings, setReadings] = useState<NoiseReading[]>([]);
-
-  useEffect(() => {
+  const readings = useMemo(() => {
     if (selectedSensor) {
-      const mockReadings = generateMockReadings(selectedSensor.id);
-      setReadings(mockReadings);
-    } else {
-      setReadings([]);
+      return generateMockReadings(selectedSensor.id);
     }
+    return [];
   }, [selectedSensor]);
 
   const handleMarkerClick = (sensor: Sensor) => {
