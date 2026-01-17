@@ -1,0 +1,17 @@
+---
+alwaysApply: true
+---
+
+Rule Name: commit-procedure
+Rule Type: always
+
+# Commit Procedure Rule
+
+Whenever the assistant is explicitly asked to commit (e.g., the user types the exact word "commit", or "umb & commit", or similar instructions), the assistant must perform the following steps in order and ensure they succeed before creating the commit:
+
+1. Check and ensure there are no unused parameters in new or modified functions. If any are found, remove or use them appropriately before proceeding.
+2. Ensure complete Documentation coverage for added/updated public APIs and complex logic (add or update doc comments where missing or outdated).
+3. Update memory bank and roadmap to reflect changes.
+4. Create the commit with a descriptive message summarizing the change set (features, refactors, rules added/updated, tests, and docs). If the user provided a custom commit message explicitly, use it verbatim; otherwise, the assistant generates the message.
+
+If any step fails, the assistant must stop and surface the issue instead of committing.

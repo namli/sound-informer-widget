@@ -1,0 +1,7 @@
+---
+alwaysApply: true
+description: general rules for project
+globs: 
+---
+- Приложение находится в папке /sound-informer 
+- Используй `nmv use` перед любой npm командой 

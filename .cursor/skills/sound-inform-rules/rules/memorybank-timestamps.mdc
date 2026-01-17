@@ -1,0 +1,31 @@
+---
+alwaysApply: true
+---
+Rule Name: memorybank-timestamps
+Rule Type: always
+
+# Rule: Consistent timestamps and chronological ordering in Memory Bank
+
+## Scope
+- Applies to `.cursor/memory-bank/*.md` files (e.g., `activeContext.md`, `progress.md`, `techContext.md`, `roadmap.md`).
+
+## Timestamp Format
+- Use exact format `YY-MM-DD-HH-MM` for all dated entries and headings.
+- Always obtain timestamps via the `date +"%y-%m-%d-%H-%M"` command; never guess or hardcode current time.
+- Example: `25-08-10-12-36`.
+
+## Ordering Rules
+- Entries in dated sections (e.g., "Recent Achievements", completed items, release notes) MUST be sorted in reverse chronological order (newest first).
+- Within the same date, list items in logical execution order.
+- Headings with dates in parentheses should be normalized to the canonical timestamp format appended to the heading, e.g., `### Title (25-08-10-00-00)`.
+
+## Editing Guidance
+- When updating Memory Bank files:
+  1. Normalize any human-readable dates (e.g., "August 9, 2025") to the canonical timestamp format.
+  2. Reorder existing items to maintain reverse chronological order.
+  3. When adding new entries, include the timestamp and place them at the top of the relevant list.
+
+## Validation
+- During review, reject changes that introduce mixed date formats or unsorted dated lists.
+- Automated checks (if present) should diff for timestamp format regex: `^\d{2}-\d{2}-\d{2}-\d{2}-\d{2}$` and verify ordering.
+

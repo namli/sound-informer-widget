@@ -1,0 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Memory Bank Location
+
+Locate all memory bank files in .cursor/memory-bank
