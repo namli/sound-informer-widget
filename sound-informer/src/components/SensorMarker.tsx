@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import type { Sensor } from '@/types';
 import { getNoiseColor } from '@/types';
+import { useState } from 'react';
 
 interface SensorMarkerProps {
   sensor: Sensor;
@@ -27,7 +27,6 @@ export function SensorMarker({ sensor, onClick }: SensorMarkerProps) {
           width: '24px',
           height: '24px',
           backgroundColor: color,
-          animation: sensor.status === 'active' ? 'si-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite' : 'none',
         }}
       />
     </div>

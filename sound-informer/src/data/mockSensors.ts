@@ -1,4 +1,4 @@
-import type { Sensor, NoiseReading } from '@/types';
+import type { NoiseReading, Sensor } from '@/types';
 
 /**
  * Фейковые данные датчиков
@@ -83,6 +83,6 @@ export function generateMockReadings(sensorId: string): NoiseReading[] {
   return Array.from({ length: 24 }, (_, hour) => ({
     timestamp: new Date(Date.now() - (23 - hour) * 60 * 60 * 1000).toISOString(),
     hour,
-    level: Math.max(20, Math.min(100, baseLevel + Math.random() * 20 - 10)) // ±10 дБ от базового, ограничено 20-100 дБ
+    level: Math.max(20, Math.min(100, baseLevel + Math.random() * 20 - 10)) // ±10 dB от базового, ограничено 20-100 dB
   }));
 }

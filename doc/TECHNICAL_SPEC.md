@@ -271,7 +271,7 @@ interface Sensor {
   /** Координаты [longitude, latitude] */
   coordinates: [number, number];
   
-  /** Текущий уровень шума (дБ) */
+  /** Текущий уровень шума (dB) */
   currentLevel: number;
   
   /** Статус датчика */
@@ -286,7 +286,7 @@ interface NoiseReading {
   /** Временная метка измерения */
   timestamp: string;
   
-  /** Уровень шума (дБ) */
+  /** Уровень шума (dB) */
   level: number;
   
   /** Час измерения (0-23) для отображения на графике */
@@ -426,7 +426,7 @@ declare global {
 
 - Тип: столбчатая диаграмма
 - Ось X: часы (0-23)
-- Ось Y: уровень шума (дБ)
+- Ось Y: уровень шума (dB)
 - Цвет столбцов: градиент по уровню шума
 - Высота графика: 200px
 
@@ -528,7 +528,7 @@ function generateMockReadings(sensorId: string): NoiseReading[] {
   return Array.from({ length: 24 }, (_, hour) => ({
     timestamp: new Date().toISOString(),
     hour,
-    level: baseLevel + Math.random() * 20 - 10 // ±10 дБ от базового
+    level: baseLevel + Math.random() * 20 - 10 // ±10 dB от базового
   }));
 }
 ```
@@ -707,7 +707,7 @@ Scopes:
 
 | Термин | Описание |
 |--------|----------|
-| дБ (децибел) | Единица измерения уровня шума |
+| dB (децибел) | Единица измерения уровня шума |
 | Popup | Всплывающее окно с информацией |
 | Маркер | Точка на карте, обозначающая датчик |
 | Виджет | Встраиваемый UI компонент |

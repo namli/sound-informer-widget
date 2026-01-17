@@ -54,7 +54,7 @@ const translations: Record<Locale, Translations> = {
     moderate: 'Умеренный',
     high: 'Высокий',
     dangerous: 'Опасный',
-    db: 'дБ'
+    db: 'dB'
   }
 };
 

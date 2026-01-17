@@ -1,6 +1,6 @@
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell } from 'recharts';
 import type { NoiseReading } from '@/types';
 import { getNoiseColor } from '@/types';
+import { Bar, BarChart, Cell, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
 interface NoiseChartProps {
   readings: NoiseReading[];
@@ -18,7 +18,7 @@ export function NoiseChart({ readings }: NoiseChartProps) {
         <YAxis 
           domain={[0, 100]}
           tick={{ fontSize: 12 }}
-          label={{ value: 'дБ', angle: -90, position: 'insideLeft' }}
+          label={{ value: 'dB', angle: -90, position: 'insideLeft' }}
         />
         <Bar dataKey="level" radius={[4, 4, 0, 0]}>
           {readings.map((entry, index) => (

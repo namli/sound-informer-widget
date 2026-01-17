@@ -47,7 +47,7 @@ export interface Sensor {
   /** Координаты [longitude, latitude] */
   coordinates: [number, number];
   
-  /** Текущий уровень шума (дБ) */
+  /** Текущий уровень шума (dB) */
   currentLevel: number;
   
   /** Статус датчика */
@@ -61,7 +61,7 @@ export interface NoiseReading {
   /** Временная метка измерения */
   timestamp: string;
   
-  /** Уровень шума (дБ) */
+  /** Уровень шума (dB) */
   level: number;
   
   /** Час измерения (0-23) для отображения на графике */
@@ -119,7 +119,7 @@ export const DEFAULT_CENTER: [number, number] = [2.3522, 48.8566];
 /**
  * Уровень zoom по умолчанию
  */
-export const DEFAULT_ZOOM = 5;
+export const DEFAULT_ZOOM = 12;
 
 /**
  * Определение локали по умолчанию
