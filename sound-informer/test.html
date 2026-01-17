@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sound Informer Widget - Test Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f3f4f6;
+      padding: 2rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+    
+    .info {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    }
+    
+    .info h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+    
+    .info p {
+      color: #6b7280;
+      line-height: 1.6;
+    }
+    
+    .widget-wrapper {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    }
+    
+    #sound-informer {
+      width: 100%;
+      height: 600px;
+      border-radius: 0.375rem;
+      overflow: hidden;
+    }
+    
+    .warning {
+      background: #fef3c7;
+      border: 1px solid #fbbf24;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .warning p {
+      color: #92400e;
+      font-size: 0.875rem;
+    }
+    
+    .warning strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #78350f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sound Informer Widget - Test Page</h1>
+    
+    <div class="info">
+      <h2>О виджете</h2>
+      <p>
+        Sound Informer Widget — встраиваемый виджет для отображения интерактивной карты 
+        с точками расположения датчиков мониторинга шумового загрязнения. 
+        Датчики расположены в трех городах: Париж, Барселона и Дахаб.
+      </p>
+    </div>
+    
+    <div class="warning">
+      <strong>⚠️ Важно для работы виджета:</strong>
+      <p>
+        Для работы виджета требуется действующий Mapbox Public Token с настроенными URL restrictions.
+        В текущей демо-версии используется тестовый токен Mapbox, который может не работать.
+        Для полноценной работы замените токен на свой в коде ниже.
+      </p>
+    </div>
+    
+    <div class="widget-wrapper">
+      <div id="sound-informer"></div>
+    </div>
+  </div>
+
+  <!-- Подключение виджета -->
+  <link rel="stylesheet" href="dist/sound-informer.css">
+  <script src="dist/sound-informer.iife.js"></script>
+  <script>
+    // Инициализация виджета
+    // ВАЖНО: Замените mapboxToken на ваш собственный Public Token
+    SoundInformer.init({
+      container: '#sound-informer',
+      mapboxToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
+      center: [2.3522, 48.8566], // Париж
+      zoom: 5,
+      height: 600,
+      locale: 'ru'
+    });
+    
+    console.log('Sound Informer Widget Version:', SoundInformer.version);
+  </script>
+</body>
+</html>

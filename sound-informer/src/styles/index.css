@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sound Informer Widget Styles */
+.si-widget-container {
+  width: 100%;
+  height: 100%;
+}
+
+.si-map-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Pulse animation for active sensors */
+@keyframes si-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Fade in animation */
+@keyframes si-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Zoom in animation */
+@keyframes si-zoom-in {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.si-animate-in {
+  animation: si-fade-in 0.2s ease-out, si-zoom-in 0.2s ease-out;
+}
+
+.si-fade-in-0 {
+  animation: si-fade-in 0.2s ease-out;
+}
+
+.si-zoom-in-95 {
+  animation: si-zoom-in 0.2s ease-out;
+}
