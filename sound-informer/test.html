@@ -115,10 +115,10 @@
   <script src="dist/sound-informer.iife.js"></script>
   <script>
     // Инициализация виджета
-    // mapboxToken теперь захардкожен в виджете и привязан к домену
+    // ВАЖНО: Замените mapboxToken на ваш собственный Public Token
     SoundInformer.init({
       container: '#sound-informer',
-      // mapboxToken: 'опционально - используется захардкоженный токен',
+      mapboxToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
       center: [2.3522, 48.8566], // Париж
       zoom: 5,
       height: 600,
